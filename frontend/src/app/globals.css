@@ -1,0 +1,187 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-50: #eff6ff;
+  --color-brand-100: #dbeafe;
+  --color-brand-400: #60a5fa;
+  --color-brand-500: #3b82f6;
+  --color-brand-600: #2563eb;
+  --color-brand-900: #1e3a8a;
+  --color-brand-950: #172554;
+  --color-dark-bg: #09090b;
+  --color-dark-surface: #18181b;
+  --color-dark-border: #27272a;
+}
+
+/* ==============================
+   THEME SYSTEM (Dark / Light)
+   ============================== */
+
+/* Default: dark */
+:root {
+  --background: #09090b;
+  --foreground: #fafafa;
+  --glass-bg: rgba(24, 24, 27, 0.65);
+  --glass-border: rgba(255, 255, 255, 0.08);
+}
+
+/* Light mode overrides */
+[data-theme="light"] {
+  --background: #f4f4f5;
+  --foreground: #09090b;
+  --glass-bg: rgba(255, 255, 255, 0.75);
+  --glass-border: rgba(0, 0, 0, 0.06);
+  --color-dark-bg: #f4f4f5;
+  --color-dark-surface: #ffffff;
+  --color-dark-border: #e4e4e7;
+}
+
+/* System preference */
+@media (prefers-color-scheme: light) {
+  [data-theme="system"] {
+    --background: #f4f4f5;
+    --foreground: #09090b;
+    --glass-bg: rgba(255, 255, 255, 0.75);
+    --glass-border: rgba(0, 0, 0, 0.06);
+    --color-dark-bg: #f4f4f5;
+    --color-dark-surface: #ffffff;
+    --color-dark-border: #e4e4e7;
+  }
+}
+
+/* ==============================
+   BODY & BASE
+   ============================== */
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ==============================
+   LIGHT MODE OVERRIDES
+   ============================== */
+
+/* Text */
+[data-theme="light"] .text-white {
+  color: #18181b !important;
+}
+[data-theme="light"] .text-zinc-400,
+[data-theme="light"] .text-zinc-300 {
+  color: #52525b !important;
+}
+[data-theme="light"] .text-zinc-500 {
+  color: #71717a !important;
+}
+
+/* Backgrounds */
+[data-theme="light"] .bg-dark-bg {
+  background-color: #f4f4f5 !important;
+}
+[data-theme="light"] .bg-dark-surface {
+  background-color: #ffffff !important;
+}
+[data-theme="light"] .bg-dark-bg\/50 {
+  background-color: #f4f4f5 !important;
+}
+[data-theme="light"] .bg-dark-surface\/50 {
+  background-color: #ffffff !important;
+}
+[data-theme="light"] .bg-dark-bg\/80 {
+  background-color: rgba(244, 244, 245, 0.9) !important;
+}
+[data-theme="light"] .bg-\[\#0c0c0e\] {
+  background-color: #f4f4f5 !important;
+}
+[data-theme="light"] .bg-black\/20 {
+  background-color: rgba(0, 0, 0, 0.04) !important;
+}
+[data-theme="light"] .bg-black\/80 {
+  background-color: rgba(0, 0, 0, 0.3) !important;
+}
+[data-theme="light"] .bg-white\/5 {
+  background-color: rgba(0, 0, 0, 0.04) !important;
+}
+[data-theme="light"] .bg-white\/\[0\.02\] {
+  background-color: rgba(0, 0, 0, 0.02) !important;
+}
+
+/* Borders */
+[data-theme="light"] .border-dark-border {
+  border-color: #e4e4e7 !important;
+}
+[data-theme="light"] .border-zinc-800 {
+  border-color: #e4e4e7 !important;
+}
+
+/* Inputs */
+[data-theme="light"] input,
+[data-theme="light"] textarea,
+[data-theme="light"] select {
+  color: #18181b !important;
+}
+
+/* ==============================
+   SYSTEM THEME (mirrors light)
+   ============================== */
+@media (prefers-color-scheme: light) {
+  [data-theme="system"] .text-white {
+    color: #18181b !important;
+  }
+  [data-theme="system"] .text-zinc-400,
+  [data-theme="system"] .text-zinc-300 {
+    color: #52525b !important;
+  }
+  [data-theme="system"] .text-zinc-500 {
+    color: #71717a !important;
+  }
+  [data-theme="system"] .bg-dark-bg {
+    background-color: #f4f4f5 !important;
+  }
+  [data-theme="system"] .bg-dark-surface {
+    background-color: #ffffff !important;
+  }
+  [data-theme="system"] .bg-dark-bg\/50 {
+    background-color: #f4f4f5 !important;
+  }
+  [data-theme="system"] .bg-dark-surface\/50 {
+    background-color: #ffffff !important;
+  }
+  [data-theme="system"] .bg-dark-bg\/80 {
+    background-color: rgba(244, 244, 245, 0.9) !important;
+  }
+  [data-theme="system"] .bg-\[\#0c0c0e\] {
+    background-color: #f4f4f5 !important;
+  }
+  [data-theme="system"] .bg-black\/20 {
+    background-color: rgba(0, 0, 0, 0.04) !important;
+  }
+  [data-theme="system"] .bg-white\/5 {
+    background-color: rgba(0, 0, 0, 0.04) !important;
+  }
+  [data-theme="system"] .border-dark-border {
+    border-color: #e4e4e7 !important;
+  }
+  [data-theme="system"] .border-zinc-800 {
+    border-color: #e4e4e7 !important;
+  }
+  [data-theme="system"] input,
+  [data-theme="system"] textarea,
+  [data-theme="system"] select {
+    color: #18181b !important;
+  }
+}
+
+/* ==============================
+   GLASSMORPHISM
+   ============================== */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  transition: background 0.3s ease;
+}
